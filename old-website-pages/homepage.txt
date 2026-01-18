@@ -1,0 +1,685 @@
+<div class="urban-home-wrapper">
+    <!-- External Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+    <style>
+        /* Scoped Reset */
+        .urban-home-wrapper {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Raleway', sans-serif;
+            background: #0a192f;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        .urban-home-wrapper * {
+            box-sizing: border-box;
+        }
+
+        .urban-home-wrapper img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Typography */
+        .urban-home-wrapper h1, 
+        .urban-home-wrapper h2, 
+        .urban-home-wrapper h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .urban-home-wrapper h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+            padding: 0 1rem;
+        }
+
+        .urban-home-wrapper h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .urban-home-wrapper h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #0F4494);
+        }
+
+        .urban-home-wrapper p {
+            font-size: clamp(1rem, 1.2vw, 1.25rem);
+            color: #e0e0e0;
+            margin: 0 auto 2rem;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        /* Layout & Sections */
+        .urban-section {
+            min-height: 90vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2; /* Ensures content sits above overlays */
+            width: 100%;
+            padding: 0 5%;
+        }
+
+        /* --- Section 1: Welcome (Dark Overlay) --- */
+        #u-section-welcome { 
+            background-image: url('https://i.ibb.co/cKSmDQ7w/Generated-Image-November-12-2025-2-29-PM.png');
+            min-height: 100vh;
+        }
+        #u-section-welcome::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 25, 47, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+
+        /* --- Section 2: Corporate (WHITE Overlay) --- */
+        #u-section-corporate { 
+            background-image: url('https://i.ibb.co/ynCVp7Jg/Generated-Image-November-12-2025-2-36-PM.png');
+            background-color: #f4f4f4;
+        }
+        
+        /* The White Overlay Logic */
+        #u-section-corporate::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Strong white overlay (92% opacity) to hide background noise */
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 1;
+        }
+
+        /* Text Overrides for White Background */
+        #u-section-corporate h2 {
+            color: #0a192f; /* Dark Blue */
+            text-shadow: none;
+        }
+        #u-section-corporate p { 
+            color: #334e68; /* Slate Blue/Grey */
+            font-weight: 500;
+        }
+
+        /* --- Section 3: About (Dark Overlay) --- */
+        #u-section-about { 
+            background-image: url('https://i.ibb.co/NnHY79kR/Generated-Image-November-12-2025-2-39-PM.png');
+        }
+        #u-section-about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 47, 0.85);
+            z-index: 1;
+        }
+
+        /* --- Section 4: Services (Dark Overlay) --- */
+        #u-section-services { 
+            background-image: url('https://i.ibb.co/99xygtjX/Generated-Image-November-12-2025-2-41-PM.png');
+        }
+        #u-section-services::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 47, 0.9);
+            z-index: 1;
+        }
+
+        /* --- Section 5: Excellence (Dark Overlay) --- */
+        #u-section-excellence { 
+            background-image: url('https://i.ibb.co/JQg3dsX/unsplash-image-q-OAzn-SDk-MME.jpg');
+        }
+        #u-section-excellence::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+/* Add this inside the .urban-home-wrapper style block */
+.urban-home-wrapper {
+    /* Existing styles... */
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    display: block;
+}
+
+/* Removes default CMS block padding */
+.sqs-block-code, 
+.sqs-block-content { 
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Removes space from images */
+.urban-home-wrapper img {
+    vertical-align: bottom;
+}
+        /* --- Section 6: Menus (Gradient Background) --- */
+        #u-section-menus { 
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+        }
+
+        /* Components: Badges */
+        .corporate-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .c-badge {
+            background: transparent;
+            color: #0a192f;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid #0a192f; /* Dark border to match text */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .c-badge:hover {
+            background: #0a192f;
+            color: #ffffff;
+        }
+
+        /* Components: Corporate Slider */
+        .corporate-slider-wrapper {
+            margin: 40px auto;
+            padding: 0 20px;
+            max-width: 1400px;
+        }
+        
+        .slider-item-inner {
+            height: 350px;
+            margin: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Slightly stronger shadow */
+        }
+
+        .slider-item-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Components: Menu Card Grid */
+        .menu-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 50px auto 0;
+            padding: 0 20px;
+        }
+
+        .menu-card {
+            background: #112240;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: #d4af37;
+        }
+
+        .menu-card-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .menu-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .menu-card-image img {
+            transform: scale(1.05);
+        }
+
+        .menu-card-content {
+            padding: 25px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .menu-card h3 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: none;
+        }
+
+        .menu-card p {
+            font-size: 1rem;
+            color: #b0c4de;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        /* Components: Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 50px auto 0;
+        }
+
+        .service-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            padding: 35px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.3s;
+        }
+
+        .service-box:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #cbd5e0;
+        }
+
+        /* Components: Buttons */
+        .cta-btn {
+            display: inline-block;
+            background: #d4af37;
+            color: #0a192f;
+            padding: 16px 40px;
+            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: 0.3s;
+            border: 2px solid #d4af37;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: #d4af37; 
+        }
+
+        /* Specific Button style for White Background section to ensure contrast */
+        #u-section-corporate .cta-btn:hover {
+            color: #0a192f;
+            border-color: #0a192f;
+            background: transparent;
+        }
+
+        /* Navigation Dots */
+        .u-scroll-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+            padding: 10px;
+        }
+
+        .u-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .u-dot.active {
+            background: #d4af37;
+            transform: scale(1.4);
+        }
+        
+        /* Ensure visual elements are visible if JS fails */
+        .gsap-reveal {
+            opacity: 1; 
+            visibility: visible;
+        }
+
+        /* Slider Controls Styling override */
+        .tns-controls button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: #0a192f;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .tns-controls button[data-controls="prev"] { left: 0; }
+        .tns-controls button[data-controls="next"] { right: 0; }
+        .tns-nav { text-align: center; margin-top: 15px; }
+        .tns-nav button { width: 10px; height: 10px; border-radius: 50%; background: #ccc; border:none; margin: 0 4px; padding:0; }
+        .tns-nav button.tns-nav-active { background: #0a192f; }
+
+        @media (max-width: 768px) {
+            .u-scroll-nav { display: none; }
+            .urban-home-wrapper h1 { font-size: 3rem; }
+            .urban-section { padding: 60px 0; min-height: auto; }
+            .menu-card-image { height: 200px; }
+        }
+    </style>
+
+    <!-- 1. Welcome Section -->
+    <section class="urban-section" id="u-section-welcome">
+        <div class="section-content">
+            <h1 class="gsap-reveal">Urban Catering</h1>
+            <p class="gsap-reveal">Transforming Nicosia venues into extraordinary gastronomic experiences.</p>
+        </div>
+    </section>
+
+    <!-- 2. Corporate Section (WHITE OVERLAY) -->
+    <section class="urban-section" id="u-section-corporate">
+        <div class="section-content">
+            <h2 class="gsap-reveal">Corporate Excellence</h2>
+            <p class="gsap-reveal">Elevating business functions with premium catering solutions tailored to your brand identity.</p>
+            
+            <div class="corporate-badges gsap-reveal">
+                <span class="c-badge">Professional Setup</span>
+                <span class="c-badge">Customized Menus</span>
+                <span class="c-badge">Seamless Service</span>
+            </div>
+            
+            <div class="corporate-slider-wrapper gsap-reveal">
+                <div class="corporate-slider">
+                    <div class="slider-item-inner"><img src="https://i.ibb.co/Jj5gx2f1/Whats-App-Image-2025-11-10-at-10-22-56-AM.jpg" alt="Corporate Setup" loading="lazy"></div>
+                    <div class="slider-item-inner"><img src="https://i.ibb.co/WpkR7FBK/Whats-App-Image-2025-11-10-at-10-21-53-AM.jpg" alt="Event Presentation" loading="lazy"></div>
+                    <div class="slider-item-inner"><img src="https://i.ibb.co/1GtSsmHg/Whats-App-Image-2025-11-10-at-10-21-52-AM-3.jpg" alt="Networking" loading="lazy"></div>
+                    <div class="slider-item-inner"><img src="https://i.ibb.co/SXNbgjdD/Whats-App-Image-2025-11-10-at-10-21-51-AM-1.jpg" alt="Buffet" loading="lazy"></div>
+                    <div class="slider-item-inner"><img src="https://i.ibb.co/1tvkrcxz/Whats-App-Image-2025-11-10-at-10-21-52-AM-2.jpg" alt="Food Station" loading="lazy"></div>
+                </div>
+            </div>
+            
+            <button class="cta-btn gsap-reveal" onclick="window.location.href='/corporate-caterings';">Explore Solutions</button>
+        </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section class="urban-section" id="u-section-about">
+        <div class="section-content">
+            <h2 class="gsap-reveal">The Urban Experience</h2>
+            <p class="gsap-reveal">As Nicosia's leading catering company, we specialize in creating unforgettable dining experiences. We don't just serve food; we curate atmospheres.</p>
+        </div>
+    </section>
+
+    <!-- 4. Services Section -->
+    <section class="urban-section" id="u-section-services">
+        <div class="section-content">
+            <h2 class="gsap-reveal">Our Expertise</h2>
+            <div class="services-grid">
+                <div class="service-box gsap-stagger">
+                    <div class="service-icon"><i class="fas fa-ring"></i></div>
+                    <h3>Weddings</h3>
+                    <p>Dream weddings with premium service.</p>
+                </div>
+                <div class="service-box gsap-stagger">
+                    <div class="service-icon"><i class="fas fa-tree"></i></div>
+                    <h3>Outdoor</h3>
+                    <p>Professional logistics for any venue.</p>
+                </div>
+                <div class="service-box gsap-stagger">
+                    <div class="service-icon"><i class="fas fa-cocktail"></i></div>
+                    <h3>Cocktail Bar</h3>
+                    <p>High-end mobile mixology.</p>
+                </div>
+                <div class="service-box gsap-stagger">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Private Dining</h3>
+                    <p>Exclusive chefs in your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Excellence Section -->
+    <section class="urban-section" id="u-section-excellence">
+        <div class="section-content">
+            <h2 class="gsap-reveal">The Urban Standard</h2>
+            <p class="gsap-reveal">We provide everything needed for your perfect event - from professional equipment to ambient lighting, sophisticated décor to expert staff.</p>
+        </div>
+    </section>
+
+    <!-- 6. Menus Section (Cards) -->
+    <section class="urban-section" id="u-section-menus">
+        <div class="section-content">
+            <h2 class="gsap-reveal">Culinary Selections</h2>
+            <p class="gsap-reveal">Discover our carefully curated menus.</p>
+            
+            <div class="menu-card-grid">
+                <!-- Card 1 -->
+                <a href="/buffet-menu" class="menu-card gsap-scale">
+                    <div class="menu-card-image">
+                        <img src="https://i.ibb.co/jv3hy5Xv/357-97464614.png" alt="Breakfast Catering" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Buffet & Breakfast</h3>
+                        <p>Complete dining solutions for large groups and morning events.</p>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="/kids-menu" class="menu-card gsap-scale">
+                    <div class="menu-card-image">
+                        <img src="https://i.ibb.co/LR5PVtN/1-4.png" alt="Kids Menu" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Kids Parties</h3>
+                        <p>Fun, delicious, and healthy options for the little ones.</p>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="/cocktail-menu" class="menu-card gsap-scale">
+                    <div class="menu-card-image">
+                        <img src="https://i.ibb.co/Nx8VsFP/1-3.png" alt="Cocktail Menu" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Cocktail & Finger Food</h3>
+                        <p>Elegant bites and canapés perfect for standing receptions.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Dots -->
+    <div class="u-scroll-nav">
+        <div class="u-dot active" onclick="document.getElementById('u-section-welcome').scrollIntoView({behavior: 'smooth'})"></div>
+        <div class="u-dot" onclick="document.getElementById('u-section-corporate').scrollIntoView({behavior: 'smooth'})"></div>
+        <div class="u-dot" onclick="document.getElementById('u-section-about').scrollIntoView({behavior: 'smooth'})"></div>
+        <div class="u-dot" onclick="document.getElementById('u-section-services').scrollIntoView({behavior: 'smooth'})"></div>
+        <div class="u-dot" onclick="document.getElementById('u-section-excellence').scrollIntoView({behavior: 'smooth'})"></div>
+        <div class="u-dot" onclick="document.getElementById('u-section-menus').scrollIntoView({behavior: 'smooth'})"></div>
+    </div>
+
+    <script>
+        (function() {
+            // Wait for dependencies to load
+            window.addEventListener('load', function() {
+                
+                // 1. Initialize GSAP Animations
+                if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
+                    gsap.registerPlugin(ScrollTrigger);
+
+                    // Fade In Up Elements
+                    gsap.utils.toArray('.gsap-reveal').forEach(elem => {
+                        gsap.from(elem, {
+                            scrollTrigger: {
+                                trigger: elem,
+                                start: "top 85%",
+                                toggleActions: "play none none reverse"
+                            },
+                            y: 40,
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: "power2.out"
+                        });
+                    });
+
+                    // Staggered Services
+                    gsap.from(".service-box", {
+                        scrollTrigger: {
+                            trigger: ".services-grid",
+                            start: "top 80%"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: "back.out(1.7)"
+                    });
+
+                    // Scale Menus
+                    gsap.from(".menu-card", {
+                        scrollTrigger: {
+                            trigger: ".menu-card-grid",
+                            start: "top 85%"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.2,
+                        ease: "power2.out"
+                    });
+                }
+
+                // 2. Initialize Slider
+                if(typeof tns !== 'undefined' && document.querySelector('.corporate-slider')) {
+                    tns({
+                        container: '.corporate-slider',
+                        items: 1,
+                        slideBy: 1,
+                        autoplay: true,
+                        autoplayButtonOutput: false,
+                        controls: true,
+                        nav: true,
+                        navPosition: 'bottom',
+                        gutter: 20,
+                        mouseDrag: true,
+                        controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                        responsive: {
+                            600: { items: 2 },
+                            900: { items: 3 },
+                            1200: { items: 4 }
+                        }
+                    });
+                }
+
+                // 3. Navigation Dots Logic
+                const sections = document.querySelectorAll('.urban-section');
+                const dots = document.querySelectorAll('.u-dot');
+
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    dots.forEach((dot, index) => {
+                        dot.classList.remove('active');
+                        if (sections[index] && sections[index].getAttribute('id') === current) {
+                            dot.classList.add('active');
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+</div>
