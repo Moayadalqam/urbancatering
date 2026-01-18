@@ -1,0 +1,333 @@
+<div class="corporate-services-page">
+  <!-- Corporate Services Header -->
+  <div class="corporate-header">
+    <h1>Corporate Catering Services</h1>
+    <p>Professional catering solutions for your business events in Nicosia</p>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="event-gallery">
+    <h2>Our Corporate Events</h2>
+    <div class="gallery-container">
+      <!-- Replace these image URLs with your actual working URLs -->
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/8gzs71G5/Whats-App-Image-2025-02-22-at-11-41-03.jpg" alt="Corporate Event Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/dSwn2LK/Whats-App-Image-2025-02-22-at-11-41-02-3.jpg " alt="Corporate Event Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/LGFbKFB/Whats-App-Image-2025-02-22-at-11-41-02-2.jpg" alt="Corporate Event Image 3">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/yBWXy3xY/Whats-App-Image-2025-02-22-at-11-41-02-1.jpg " alt="Corporate Event Image 4">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/kgMVf0br/Whats-App-Image-2025-02-22-at-11-41-03-2.jpg" alt="Corporate Event Image 5">
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ibb.co/TM8CCYyN/Whats-App-Image-2025-02-22-at-11-41-03-1.jpg" alt="Corporate Event Image 6">
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Services Intro -->
+  <div class="corporate-intro">
+    <p>Urban Catering provides exceptional food and service for all types of corporate events. From business meetings to company celebrations, we deliver quality catering that meets your professional standards.</p>
+  </div>
+
+  <!-- Corporate Services List -->
+  <div class="services-list">
+    <h2>Our Corporate Services</h2>
+    <ul>
+      <li>Business meetings and conferences</li>
+      <li>Corporate celebrations and team events</li>
+      <li>Product launches and presentations</li>
+      <li>Executive lunches and dinners</li>
+      <li>Corporate breakfast catering</li>
+      <li>Office catering and delivery</li>
+    </ul>
+  </div>
+
+  <!-- Corporate Menu Options -->
+  <div class="menu-options">
+    <h2>Menu Options</h2>
+    <p>We offer flexible menu options to suit your corporate requirements:</p>
+    <ul>
+      <li>Breakfast packages</li>
+      <li>Buffet-style catering</li>
+      <li>Finger food and canapés</li>
+      <li>Seated multi-course meals</li>
+      <li>Beverages and bar service</li>
+    </ul>
+  </div>
+
+  <!-- Featured Images Section -->
+  <div class="featured-images">
+    <div class="featured-row">
+      <div class="featured-text">
+        <h2>Quality Food Presentation</h2>
+        <p>Our corporate catering services include professionally presented food stations, buffets, and plated options to impress your clients and team members.</p>
+      </div>
+      <div class="featured-image">
+        <!-- Replace with your actual working URL -->
+        <img src="https://i.ibb.co/LGFbKFB/Whats-App-Image-2025-02-22-at-11-41-02-2.jpg" alt="Food Presentation">
+      </div>
+    </div>
+    <div class="featured-row reverse">
+      <div class="featured-text">
+        <h2>Professional Service</h2>
+        <p>Our experienced staff ensures seamless service throughout your corporate event, allowing you to focus on your business objectives.</p>
+      </div>
+      <div class="featured-image">
+        <!-- Replace with your actual working URL -->
+        <img src="https://i.ibb.co/TM8CCYyN/Whats-App-Image-2025-02-22-at-11-41-03-1.jpg" alt="Professional Service">
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Benefits -->
+  <div class="corporate-benefits">
+    <h2>Why Choose Us For Corporate Events</h2>
+    <ul>
+      <li>Professional and reliable service</li>
+      <li>Quality ingredients and presentation</li>
+      <li>Flexible options to suit your budget</li>
+      <li>Experienced staff and setup</li>
+      <li>Attention to detail</li>
+    </ul>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <h2>Discuss Your Corporate Event</h2>
+    <p>Contact us to discuss your specific requirements and receive a customized quote.</p>
+    <a href="https://urbancateringcy.com/contact-1" class="contact-button">Contact Us</a>
+  </div>
+</div>
+
+<style>
+/* Corporate Services Page Styles */
+.corporate-services-page {
+  font-family: 'Raleway', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.corporate-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.corporate-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #0F4494;
+  margin-bottom: 15px;
+}
+
+.corporate-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Gallery Styles */
+.event-gallery {
+  margin-bottom: 50px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Featured Images Section */
+.featured-images {
+  margin: 60px 0;
+}
+
+.featured-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.featured-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.featured-text {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.featured-image {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.corporate-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.corporate-intro p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.services-list, .menu-options, .corporate-benefits {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #0F4494;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #0F4494;
+}
+
+.event-gallery h2:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.event-gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 25px;
+}
+
+li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0F4494;
+  font-weight: bold;
+}
+
+.contact-section {
+  background-color: #f8f8f8;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.contact-section h2:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #0F4494;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #0a2f66;
+}
+
+@media (max-width: 768px) {
+  .corporate-header h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .corporate-intro p {
+    font-size: 16px;
+  }
+  
+  li {
+    font-size: 15px;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featured-row {
+    flex-direction: column;
+  }
+  
+  .featured-row.reverse {
+    flex-direction: column;
+  }
+  
+  .featured-text {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

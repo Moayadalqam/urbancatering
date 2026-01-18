@@ -1,0 +1,274 @@
+    <style>
+        /* RESET & BASE STYLES (Matching Footer) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        /* LAYOUT CONTAINERS */
+        .page-wrapper {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 300px;
+            background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop'); /* Placeholder catering image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for text contrast */
+        }
+
+        .hero-title {
+            position: relative;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255,255,255,0.8);
+            padding-bottom: 15px;
+        }
+
+        /* MAIN CONTENT LAYOUT (Mimics Footer Flex Structure) */
+        .content-container {
+            display: flex;
+            padding: 60px 60px;
+            gap: 60px;
+        }
+
+        /* LEFT SIDE (Mimics Logo Section) */
+        .intro-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            min-width: 280px;
+            border-right: 1px solid #e0e0e0; /* Vertical separator */
+            padding-right: 60px;
+        }
+
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-small {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .intro-text {
+            color: #666;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* RIGHT SIDE (Mimics Main Content Columns) */
+        .features-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 Column Grid */
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feature-item h3 {
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* PARTNER / CTA SECTION */
+        .partner-section {
+            background-color: #f9f9f9;
+            padding: 50px 60px;
+            margin-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .partner-content h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .partner-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #333;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #497173; /* Brand color from footer hover */
+            color: white;
+            border-color: #497173;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .content-container {
+                flex-direction: column;
+                padding: 40px 30px;
+            }
+            
+            .intro-column {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr; /* Stack features on mobile */
+            }
+            
+            .content-container {
+                padding: 30px 20px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-overlay"></div>
+            <h1 class="hero-title">Urban Catering</h1>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-container">
+            
+            <!-- Intro Column (styled like the Logo Section of footer) -->
+            <div class="intro-column">
+                <div class="section-header">
+                    <!-- Using same logo source as footer -->
+                    <img src="https://i.ibb.co/3ytjFrv/Whats-App-Image-2024-10-07-at-18-03-48.jpg" alt="Logo" class="logo-small">
+                    <span>Company Profile</span>
+                </div>
+                <p class="intro-text">
+                    Urban Catering brings the essence of exceptional Nicosia catering & dining directly to you, transforming any location into an extraordinary gastronomic venue. 
+                    <br><br>
+                    From sun-drenched beach celebrations to elegant garden soirees and high-profile corporate events, we ensure a seamless experience that encapsulates the spirit of your occasion.
+                </p>
+            </div>
+
+            <!-- Features Column (styled like the Footer Columns) -->
+            <div class="features-column">
+                <div class="features-grid">
+                    
+                    <!-- Feature 1 -->
+                    <div class="feature-item">
+                        <h3>Culinary Excellence</h3>
+                        <p>Our team of skilled chefs is dedicated to creating a feast for the senses, preparing sumptuous dishes that capture the local flavor with a sophisticated twist.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-item">
+                        <h3>Complete Event Services</h3>
+                        <p>We provide comprehensive event services including custom bar setups, stylish tents, elegant lighting, and bespoke furniture to set the perfect mood.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-item">
+                        <h3>Beverage Mastery</h3>
+                        <p>Our adept bartending team excels in crafting an extensive range of beverages, from bespoke cocktails featuring top-shelf spirits to a thoughtful selection of wines and artisanal juices.</p>
+                    </div>
+
+                    <!-- Feature 4 (Added as placeholder to balance grid if needed, or keep 3) -->
+                    <div class="feature-item">
+                        <h3>Locations</h3>
+                        <p>Whether it is a private residence, a corporate hall, or an outdoor venue, we adapt our services to fit the unique logistics of your chosen location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner CTA Section -->
+        <div class="partner-section">
+            <div class="partner-content">
+                <h2>Partner With Us</h2>
+                <p>Interested in creating extraordinary experiences together?</p>
+                <a href="/contact" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

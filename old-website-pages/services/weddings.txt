@@ -1,0 +1,198 @@
+<div class="service-page wedding-service">
+  <header>
+    <h1>Wedding Catering</h1>
+    <p>Elevate Your Special Day with Exquisite Cuisine</p>
+  </header>
+
+  <main>
+    <section class="service-intro">
+      <img src="/api/placeholder/800/400" alt="Elegant wedding table setting" class="service-image">
+      <p>At Urban Catering, we understand that your wedding day is one of the most important days of your life. Our expert team is dedicated to creating a memorable culinary experience that perfectly complements your celebration of love.</p>
+    </section>
+
+    <section class="service-features">
+      <h2>Our Wedding Catering Services Include:</h2>
+      <ul>
+        <li>Customized menu planning</li>
+        <li>Professional service staff</li>
+        <li>Elegant table settings and decor</li>
+        <li>Bar service options</li>
+        <li>Dietary accommodation (vegetarian, vegan, gluten-free, etc.)</li>
+        <li>Cake cutting and dessert service</li>
+      </ul>
+    </section>
+
+    <section class="service-options">
+      <h2>Catering Styles</h2>
+      <div class="option-grid">
+        <div class="option-item">
+          <h3>Plated Dinner</h3>
+          <p>Elegant multi-course meals served directly to your guests</p>
+        </div>
+        <div class="option-item">
+          <h3>Buffet Style</h3>
+          <p>A variety of dishes for guests to choose from</p>
+        </div>
+        <div class="option-item">
+          <h3>Family Style</h3>
+          <p>Shareable platters served to each table</p>
+        </div>
+        <div class="option-item">
+          <h3>Cocktail Reception</h3>
+          <p>Hors d'oeuvres and small plates for a more casual atmosphere</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <blockquote>
+        "Urban Catering made our wedding day absolutely perfect. The food was incredible, and the service was impeccable. Our guests are still raving about it!"
+      </blockquote>
+      - Sarah & Michael, Newlyweds
+    </section>
+  </main>
+
+  <footer1>
+    <h2>Ready to Plan Your Wedding Menu?</h2>
+    <button class="cta-button">Contact Us for a Consultation</button>
+  </footer1>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+    .service-page {
+      font-family: 'Raleway', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: #0F4494;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    .service-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .service-features ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .service-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .service-features li:last-child {
+      border-bottom: none;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .option-item {
+      background-color: #f8f8f8;
+      border: 1px solid #0F4494;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #f8f8f8;
+      border-left: 4px solid #0F4494;
+      padding: 20px;
+      margin: 40px 0;
+      font-style: italic;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    footer1 {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-button {
+      background-color: #0F4494;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #0d3a7d;
+    }
+
+    @media (max-width: 768px) {
+      .option-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</div>

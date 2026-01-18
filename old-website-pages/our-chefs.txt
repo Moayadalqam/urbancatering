@@ -1,0 +1,438 @@
+    <style>
+        /* RESET & BASE STYLES (Matching Footer/Profile) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* LAYOUT CONTAINERS */
+        .page-wrapper {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 300px;
+            /* Using a kitchen/chef related background */
+            background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2077&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255,255,255,0.8);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* MAIN CONTENT LAYOUT */
+        .content-container {
+            display: flex;
+            padding: 60px 60px;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* LEFT SIDE - Philosophy (Mimics Logo/Intro Section) */
+        .intro-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            min-width: 280px;
+            border-right: 1px solid #e0e0e0;
+            padding-right: 60px;
+        }
+
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #000;
+        }
+
+        .philosophy-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .philosophy-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .philosophy-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* RIGHT SIDE - Chef Profiles */
+        .chefs-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 50px; /* Space between chefs */
+        }
+
+        .chef-profile {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .chef-profile:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .chef-image-container {
+            flex: 0 0 200px; /* Fixed width for images */
+        }
+
+        .chef-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px; /* Slight radius, keeping it clean */
+            filter: grayscale(20%); /* Slight grayscale to match theme, removal on hover optional */
+            transition: filter 0.3s;
+        }
+
+        .chef-profile:hover .chef-img {
+            filter: grayscale(0%);
+        }
+
+        .chef-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .chef-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .chef-title {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: -8px;
+        }
+
+        .chef-quote {
+            font-style: italic;
+            font-size: 15px;
+            color: #555;
+            padding-left: 12px;
+            border-left: 3px solid #e0e0e0;
+            margin: 10px 0;
+        }
+
+        .specialty-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            align-self: flex-start;
+        }
+
+        .signature-dishes h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .signature-dishes ul li {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .signature-dishes ul li::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 4px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        /* CTA SECTION (Matching Footer/Profile Partner Section) */
+        .cta-section {
+            background-color: #f9f9f9;
+            padding: 50px 60px;
+            margin-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .cta-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #333;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #497173; /* Brand Teal */
+            color: white;
+            border-color: #497173;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .content-container {
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 40px;
+            }
+            
+            .intro-column {
+                width: 100%;
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 40px;
+            }
+
+            .chef-profile {
+                flex-direction: column;
+            }
+
+            .chef-image-container {
+                flex: auto;
+                width: 100%;
+            }
+            
+            .chef-img {
+                height: 300px; /* Taller images on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 30px 20px;
+            }
+            
+            .hero-title {
+                font-size: 26px;
+            }
+
+            .chef-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Our Chefs</h1>
+                <p class="hero-subtitle">Masters of Urban Catering In Nicosia, Cyprus</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-container">
+            
+            <!-- Left Column: Philosophy (Acts as the 'Intro' section) -->
+            <div class="intro-column">
+                <div class="section-header">
+                    <span>Our Philosophy</span>
+                </div>
+                
+                <div class="philosophy-item">
+                    <h4>Locally Sourced</h4>
+                    <p>Supporting our community with the freshest ingredients.</p>
+                </div>
+
+                <div class="philosophy-item">
+                    <h4>Innovative Techniques</h4>
+                    <p>Blending tradition with cutting-edge culinary methods.</p>
+                </div>
+
+                <div class="philosophy-item">
+                    <h4>Global Fusion</h4>
+                    <p>Bringing world flavors to your plate.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Chef Profiles -->
+            <div class="chefs-column">
+                <div class="section-header">
+                    <span>Executive Team</span>
+                </div>
+
+                <!-- Chef Marios -->
+                <div class="chef-profile">
+                    <div class="chef-image-container">
+                        <img src="https://i.ibb.co/PrcGPS4/Whats-App-Image-2025-01-22-at-18-50-01.jpg" alt="Chef Marios Malekkos" class="chef-img">
+                    </div>
+                    <div class="chef-details">
+                        <div>
+                            <h2 class="chef-name">Marios Malekkos</h2>
+                            <p class="chef-title">Executive Chef at Bao Pau Cyprus</p>
+                        </div>
+                        <span class="specialty-badge">Japanese Cuisine Expert</span>
+                        <p class="chef-quote">"Crafting authentic Japanese Peruvian Cuisine is about respecting tradition while embracing innovation in every dish."</p>
+                        
+                        <div class="signature-dishes">
+                            <h5>Signature Creations</h5>
+                            <ul>
+                                <li>Traditional Japanese Omakase</li>
+                                <li>Modern Bao Creations</li>
+                                <li>Premium Chef's Table Experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chef Ioannis -->
+                <div class="chef-profile">
+                    <div class="chef-image-container">
+                        <img src="https://i.ibb.co/JCP6q9F/Untitled-draft-3.jpg" alt="Chef Ioannis Pratikakis" class="chef-img">
+                    </div>
+                    <div class="chef-details">
+                        <div>
+                            <h2 class="chef-name">Ioannis Pratikakis</h2>
+                            <p class="chef-title">Executive Chef</p>
+                        </div>
+                        <span class="specialty-badge">Private BBQ Events Specialist</span>
+                        <p class="chef-quote">"Creating memories through flavors is not just a profession, it's an art form that touches people's hearts."</p>
+                        
+                        <div class="signature-dishes">
+                            <h5>Signature Creations</h5>
+                            <ul>
+                                <li>Dry-Aged Tomahawk Steak</li>
+                                <li>Cedar Plank Grilled Salmon</li>
+                                <li>Herb-Crusted Rack of Lamb</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chef Theodoros -->
+                <div class="chef-profile">
+                    <div class="chef-image-container">
+                        <img src="https://i.ibb.co/56Jyqjc/Love-what-you-do-do-it-with-passion-and-remember-to-smile-in-the-process.jpg" alt="Chef Theodoros Eleftheriou" class="chef-img">
+                    </div>
+                    <div class="chef-details">
+                        <div>
+                            <h2 class="chef-name">Theodoros Eleftheriou</h2>
+                            <p class="chef-title">Executive Chef</p>
+                        </div>
+                        <span class="specialty-badge">Brunch Cuisine Specialist</span>
+                        <p class="chef-quote">"Love what you do, do it with passion, and remember to smile in the process."</p>
+                        
+                        <div class="signature-dishes">
+                            <h5>Signature Creations</h5>
+                            <ul>
+                                <li>Eggs Benedict with Cypriot Halloumi</li>
+                                <li>Mediterranean Breakfast Board</li>
+                                <li>Orange Blossom French Toast</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Experience Culinary Excellence</h2>
+                <p>Let our talented chefs create an unforgettable experience for your next event.</p>
+                <a href="https://urbancateringcy.com/contact-1" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

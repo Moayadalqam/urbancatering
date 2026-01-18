@@ -1,0 +1,224 @@
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* 1. STRUCTURAL RESET & WHITE BACKGROUND */
+    .urban-wrapper {
+        background-color: #ffffff !important; /* Explicit White Background */
+        width: 100%;
+        margin: 0 auto;          /* Centers the wrapper horizontally */
+        padding: 40px 20px;      /* Spacing from edges */
+        font-family: 'Lato', sans-serif;
+    }
+
+    /* Ensure padding doesn't break layout width */
+    .urban-wrapper * {
+        box-sizing: border-box;
+    }
+
+    /* 2. GRID SYSTEM (Mobile First) */
+    .urban-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Mobile: 1 Column (Full Width) */
+        gap: 24px;                  /* Space between cards */
+        width: 100%;
+    }
+
+    /* Desktop: Switch to 3 columns */
+    @media (min-width: 768px) {
+        .urban-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* 3. CARD STYLING */
+    .menu-card {
+        position: relative;
+        background: #fff;
+        border: 1px solid #eee;
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        
+        /* Animation Init */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease;
+    }
+
+    .menu-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Golden Inner Border */
+    .menu-card::after {
+        content: '';
+        position: absolute;
+        top: 10px; left: 10px; right: 10px; bottom: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.4); /* Gold */
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+
+    .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #D4AF37;
+    }
+
+    .menu-card:hover::after {
+        border-color: #D4AF37;
+        top: 6px; left: 6px; right: 6px; bottom: 6px;
+    }
+
+    .menu-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .menu-card:hover img {
+        transform: scale(1.03);
+    }
+
+    /* Overlay Label */
+    .overlay-label {
+        position: absolute;
+        bottom: 0; left: 0; width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        padding: 40px 10px 20px 10px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+        z-index: 3;
+    }
+
+    .menu-card:hover .overlay-label {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-title {
+        font-family: 'Playfair Display', serif;
+        color: #D4AF37;
+        font-size: 1.5rem;
+        font-style: italic;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    /* 4. BUTTON STYLING */
+    .btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centers the button */
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .premium-btn {
+        background-color: #ffffff; /* White Button */
+        color: #222;               /* Dark Text */
+        font-family: 'Playfair Display', serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 1px solid #D4AF37; /* Gold Border */
+        padding: 1rem 2.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        
+        /* Animation Init */
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    .premium-btn.is-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .premium-btn:hover {
+        background-color: #D4AF37; /* Gold Fill on Hover */
+        color: #ffffff;            /* White Text on Hover */
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+</style>
+
+<div class="urban-wrapper">
+    <!-- Grid -->
+    <div class="urban-grid">
+        
+        <!-- Card 1 -->
+        <div class="menu-card delay-1">
+            <img src="https://i.ibb.co/FrqH9DM/357-70070053-2.png" alt="Cocktail Menu">
+            <div class="overlay-label">
+                <h3 class="menu-title">Cocktail Selection</h3>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="menu-card delay-2">
+            <img src="https://i.ibb.co/vvxVsZ8y/357-70070053-3.png" alt="Festive Dinner Menu">
+            <div class="overlay-label">
+                <h3 class="menu-title">Festive Dinner</h3>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="menu-card delay-3">
+            <img src="https://i.ibb.co/sdkLfDXs/1.png" alt="Platters Menu">
+            <div class="overlay-label">
+                <h3 class="menu-title">Gourmet Platters</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Button -->
+    <div class="btn-container">
+        <!-- LINK CHANGED HERE TO FORCE DOWNLOAD -->
+        <a href="https://drive.google.com/uc?export=download&id=1wXkHy4uxbJmPpv4E6QH3pUto0eaKqR40" 
+           class="premium-btn delay-btn" download>
+            <span>Download All Menus</span>
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let delay = 0;
+                    if(entry.target.classList.contains('delay-2')) delay = 150;
+                    if(entry.target.classList.contains('delay-3')) delay = 300;
+                    if(entry.target.classList.contains('delay-btn')) delay = 400;
+
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, delay);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.menu-card, .premium-btn').forEach(el => observer.observe(el));
+    });
+</script>

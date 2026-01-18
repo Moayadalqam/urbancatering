@@ -1,0 +1,198 @@
+<div class="service-page outdoor-catering-service">
+  <header>
+    <h1>Outdoor Catering</h1>
+    <p>Delight Your Guests with Exceptional Cuisine Under the Open Sky!</p>
+  </header>
+
+  <main>
+    <section class="service-intro">
+      <img src="/api/placeholder/800/400" alt="Outdoor catering setup" class="service-image">
+      <p>At Urban Catering, we specialize in creating unforgettable outdoor dining experiences. Whether it's a picnic, a barbecue, or a grand tented affair, our culinary team is ready to bring the flavors to your outdoor events.</p>
+    </section>
+
+    <section class="service-features">
+      <h2>Our Outdoor Catering Services Include:</h2>
+      <ul>
+        <li>Customizable outdoor menus</li>
+        <li>Grill and barbecue options</li>
+        <li>Elegant tent and table setups</li>
+        <li>Outdoor bar service with refreshing beverages</li>
+        <li>Weather contingency planning</li>
+        <li>Event staffing and coordination</li>
+      </ul>
+    </section>
+
+    <section class="service-options">
+      <h2>Catering Styles</h2>
+      <div class="option-grid">
+        <div class="option-item">
+          <h3>Picnic Style</h3>
+          <p>Casual outdoor dining with picnic baskets and blankets</p>
+        </div>
+        <div class="option-item">
+          <h3>Barbecue Feast</h3>
+          <p>Grilled meats and veggies served buffet-style</p>
+        </div>
+        <div class="option-item">
+          <h3>Tented Elegance</h3>
+          <p>Formal dining experience in a beautifully decorated tent</p>
+        </div>
+        <div class="option-item">
+          <h3>Mobile Food Stations</h3>
+          <p>Interactive stations for a unique outdoor dining experience</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <blockquote>
+        "Urban Catering exceeded our expectations for our outdoor wedding. The food was fantastic, and the setup was stunning!"
+      </blockquote>
+      - Lisa & Tom, Happy Couple
+    </section>
+  </main>
+
+  <footer1>
+    <h2>Ready to Plan Your Outdoor Event Menu?</h2>
+    <button class="cta-button">Contact Us for a Consultation</button>
+  </footer1>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+    .outdoor-catering-service {
+      font-family: 'Raleway', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: #009688; /* Teal color for outdoor theme */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    .service-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .service-features ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .service-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .service-features li:last-child {
+      border-bottom: none;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .option-item {
+      background-color: #e0f7fa; /* Light blue background for outdoor feel */
+      border: 1px solid #009688; /* Matching border color */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #e0f7fa;
+      border-left: 4px solid #009688;
+      padding: 20px;
+      margin: 40px 0;
+      font-style: italic;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    footer1 {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-button {
+      background-color: #009688;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00796b; /* Darker shade for hover effect */
+    }
+
+    @media (max-width: 768px) {
+      .option-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</div>

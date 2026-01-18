@@ -1,0 +1,339 @@
+<!-- BEGIN URBAN CATERING EQUIPMENT MODULE -->
+<div id="uc-equipment-module">
+    <style>
+        /* SCOPED CSS FOR EQUIPMENT MODULE */
+        #uc-equipment-module {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            background: #fff;
+            color: #1a1a1a;
+            /* Constraints: No width/padding on root, fits into blog flow */
+        }
+        
+        #uc-equipment-module * {
+            box-sizing: border-box;
+        }
+
+        .uc-eq-wrapper {
+            position: relative;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            margin: 40px 0;
+        }
+
+        /* Header Styling */
+        .uc-eq-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 40px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .uc-eq-title-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .uc-eq-title-group h2 {
+            margin: 0;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .uc-eq-title-group h2 span {
+            color: #d4af37; /* Gold Accent */
+            font-style: italic;
+        }
+
+        .uc-eq-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            border: 1px solid #ccc;
+            padding: 8px 15px;
+            font-weight: 600;
+        }
+
+        /* Slide Container */
+        .uc-slide-stage {
+            position: relative;
+            padding: 40px;
+            min-height: 600px; /* Prevent layout shift */
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uc-slide-item {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .uc-slide-item.active {
+            display: block;
+            animation: ucFadeScale 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .uc-slide-item img {
+            max-width: 100%;
+            max-height: 750px; /* Kept height from original */
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05)); /* Subtle luxury shadow */
+        }
+
+        @keyframes ucFadeScale {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Navigation Arrows */
+        .uc-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 10;
+        }
+
+        .uc-nav-btn:hover {
+            background: #1a1a1a;
+            color: #d4af37;
+            border-color: #1a1a1a;
+        }
+
+        .uc-nav-prev { left: 0; border-left: none; }
+        .uc-nav-next { right: 0; border-right: none; }
+
+        /* Counter */
+        .uc-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #d4af37;
+            background: #fff;
+            padding: 5px 15px;
+            border: 1px solid #eee;
+        }
+
+        /* Footer / Controls */
+        .uc-eq-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 40px;
+            background: #fbfbfb;
+            border-top: 1px solid #eee;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Dots */
+        .uc-dots-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            max-width: 60%;
+        }
+
+        .uc-dot {
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            border-radius: 0; /* Square dots for architectural feel */
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .uc-dot:hover { background: #666; }
+        .uc-dot.active {
+            background: #d4af37;
+            transform: scale(1.2);
+        }
+
+        /* Download Button - Urban Style */
+        .uc-dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 1px solid #1a1a1a;
+        }
+
+        .uc-dl-btn:hover {
+            background: #fff;
+            color: #1a1a1a;
+            border-color: #d4af37;
+        }
+
+        .uc-dl-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .uc-eq-header { padding: 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .uc-eq-footer { flex-direction: column; align-items: center; }
+            .uc-dots-container { justify-content: center; max-width: 100%; margin-bottom: 15px; }
+            .uc-slide-item img { height: auto; max-height: 400px; }
+            .uc-slide-stage { min-height: 400px; padding: 20px; }
+        }
+    </style>
+
+    <div class="uc-eq-wrapper">
+        <!-- Header -->
+        <div class="uc-eq-header">
+            <div class="uc-eq-title-group">
+                <!-- Gold Icon -->
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="square">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <h2>Equipment <span>Collection</span></h2>
+            </div>
+            <div class="uc-eq-badge">Catalog 2025</div>
+        </div>
+
+        <!-- Slideshow Stage -->
+        <div class="uc-slide-stage">
+            <div class="uc-counter"><span id="ucCurrent">1</span> &mdash; 35</div>
+            
+            <!-- Slides (35 Items) -->
+            <div class="uc-slide-item active"><img src="https://i.ibb.co/tpW93dB/1.png" alt="Catering Equipment 1"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/MGtbjW5/2.png" alt="Catering Equipment 2"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/tzt9Ny3/3.png" alt="Catering Equipment 3"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/rxSWz36/4.png" alt="Catering Equipment 4"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/9p4wpcG/5.png" alt="Catering Equipment 5"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/1LXLRNS/6.png" alt="Catering Equipment 6"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/vmvRCj9/7.png" alt="Catering Equipment 7"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/gyThcyN/8.png" alt="Catering Equipment 8"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/crwDjRv/9.png" alt="Catering Equipment 9"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/t38zS1W/10.png" alt="Catering Equipment 10"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/khHypyX/11.png" alt="Catering Equipment 11"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/tMCmXHv/12.png" alt="Catering Equipment 12"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/D4h0yk7/13.png" alt="Catering Equipment 13"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/YB9pz4w/14.png" alt="Catering Equipment 14"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/YhfR1F3/15.png" alt="Catering Equipment 15"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/F4Vbw5W/16.png" alt="Catering Equipment 16"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/WV5By9C/17.png" alt="Catering Equipment 17"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/R3S5nvK/18.png" alt="Catering Equipment 18"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/mC2PG6D/19.png" alt="Catering Equipment 19"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/KrWSt4B/20.png" alt="Catering Equipment 20"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/bFSLs0p/21.png" alt="Catering Equipment 21"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/kXm7BLr/22.png" alt="Catering Equipment 22"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/gMbFpnQ/23.png" alt="Catering Equipment 23"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/B4Dxg8n/24.png" alt="Catering Equipment 24"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/rdNsbHD/25.png" alt="Catering Equipment 25"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/7KVBbxq/26.png" alt="Catering Equipment 26"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/4mwQBch/27.png" alt="Catering Equipment 27"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/H2KPKYR/28.png" alt="Catering Equipment 28"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/qdh90YV/29.png" alt="Catering Equipment 29"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/GvGrMGF/30.png" alt="Catering Equipment 30"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/Ks9XzZm/31.png" alt="Catering Equipment 31"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/cvppT5C/32.png" alt="Catering Equipment 32"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/Msrxpbt/33.png" alt="Catering Equipment 33"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/WfXyLgC/34.png" alt="Catering Equipment 34"></div>
+            <div class="uc-slide-item"><img src="https://i.ibb.co/N6WYMHkx/357-97464614-3.png" alt="Catering Equipment 35"></div>
+
+            <!-- Navigation Buttons -->
+            <button class="uc-nav-btn uc-nav-prev" onclick="ucChangeSlide(-1)">&#8592;</button>
+            <button class="uc-nav-btn uc-nav-next" onclick="ucChangeSlide(1)">&#8594;</button>
+        </div>
+
+        <!-- Footer / Controls -->
+        <div class="uc-eq-footer">
+            <div class="uc-dots-container" id="ucDots"></div>
+            
+            <a href="https://drive.google.com/uc?export=download&id=1qyKhZpihjDSJ1U9DmgndybeAycxwgNm1" class="uc-dl-btn" download>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+            </a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        // Encapsulated logic to avoid global variable conflicts
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('.uc-slide-item');
+        const dotsContainer = document.getElementById('ucDots');
+        const counterEl = document.getElementById('ucCurrent');
+        const totalSlides = slides.length;
+        
+        // 1. Generate Dots
+        for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'uc-dot' + (i === 1 ? ' active' : '');
+            dot.onclick = function() { ucGoToSlide(i); };
+            dotsContainer.appendChild(dot);
+        }
+        
+        // 2. Main Slide Function
+        window.ucChangeSlide = function(n) {
+            ucGoToSlide(currentSlide + n);
+        };
+        
+        window.ucGoToSlide = function(n) {
+            currentSlide = n;
+            // Loop logic
+            if (currentSlide > totalSlides) currentSlide = 1;
+            if (currentSlide < 1) currentSlide = totalSlides;
+            
+            // Remove active classes
+            slides.forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.uc-dot').forEach(d => d.classList.remove('active'));
+            
+            // Add active classes
+            slides[currentSlide - 1].classList.add('active');
+            document.querySelectorAll('.uc-dot')[currentSlide - 1].classList.add('active');
+            
+            // Update counter
+            if(counterEl) counterEl.textContent = currentSlide;
+        };
+        
+        // 3. Auto-play (Optional, set to 5 seconds)
+        let autoPlay = setInterval(function() { ucChangeSlide(1); }, 5000);
+        
+        // Pause on hover
+        const wrapper = document.querySelector('.uc-eq-wrapper');
+        if(wrapper) {
+            wrapper.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+            wrapper.addEventListener('mouseleave', function() { autoPlay = setInterval(function() { ucChangeSlide(1); }, 5000); });
+        }
+    })();
+    </script>
+</div>
+<!-- END URBAN CATERING EQUIPMENT MODULE -->

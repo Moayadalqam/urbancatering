@@ -1,0 +1,198 @@
+<div class="service-page bbq-catering-service">
+  <header>
+    <h1>BBQ Catering</h1>
+    <p>Enjoy Delicious Grilled Favorites at Your Next Event!</p>
+  </header>
+
+  <main>
+    <section class="service-intro">
+      <img src="/api/placeholder/800/400" alt="BBQ setup" class="service-image">
+      <p>At Urban Catering, we specialize in bringing the best BBQ experience to your events. From backyard gatherings to large celebrations, our BBQ catering service is designed to satisfy your guests with flavorful grilled dishes that everyone will love.</p>
+    </section>
+
+    <section class="service-features">
+      <h2>Our BBQ Catering Services Include:</h2>
+      <ul>
+        <li>Custom BBQ menus tailored to your preferences</li>
+        <li>A variety of grilled meats and sides</li>
+        <li>Setup and cleanup for your convenience</li>
+        <li>Interactive grilling stations for guests</li>
+        <li>Delicious appetizers and desserts</li>
+        <li>On-site delivery and service available</li>
+      </ul>
+    </section>
+
+    <section class="service-options">
+      <h2>BBQ Styles</h2>
+      <div class="option-grid">
+        <div class="option-item">
+          <h3>Classic BBQ</h3>
+          <p>Traditional favorites like ribs, burgers, and sausages</p>
+        </div>
+        <div class="option-item">
+          <h3>Gourmet BBQ</h3>
+          <p>Upscale BBQ options with premium cuts and unique flavors</p>
+        </div>
+        <div class="option-item">
+          <h3>BBQ Buffet</h3>
+          <p>A self-service buffet with a variety of BBQ dishes</p>
+        </div>
+        <div class="option-item">
+          <h3>Family-Style BBQ</h3>
+          <p>Shareable platters served directly to your tables</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <blockquote>
+        "The BBQ catering from Urban Catering was amazing! Our guests loved the food, and the service was exceptional!"
+      </blockquote>
+      - Jessica & Mark, Happy Hosts
+    </section>
+  </main>
+
+  <footer1>
+    <h2>Ready to Plan Your BBQ Menu?</h2>
+    <button class="cta-button">Contact Us for a Consultation</button>
+  </footer1>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+    .bbq-catering-service {
+      font-family: 'Raleway', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: #D32F2F; /* Deep red for a vibrant BBQ theme */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    .service-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .service-features ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .service-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .service-features li:last-child {
+      border-bottom: none;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .option-item {
+      background-color: #FFCDD2; /* Light red for a warm feel */
+      border: 1px solid #D32F2F; /* Matching border color */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #FFCDD2;
+      border-left: 4px solid #D32F2F;
+      padding: 20px;
+      margin: 40px 0;
+      font-style: italic;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    footer1 {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-button {
+      background-color: #D32F2F;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #B71C1C; /* Darker shade for hover effect */
+    }
+
+    @media (max-width: 768px) {
+      .option-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</div>
