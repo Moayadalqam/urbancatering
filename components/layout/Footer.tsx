@@ -20,6 +20,7 @@ const footerLinks = {
     { name: 'About Us', href: '/company-profile' },
     { name: 'Our Chefs', href: '/our-chefs' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
   ],
 };
 
