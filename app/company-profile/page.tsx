@@ -140,7 +140,7 @@ export default function CompanyProfilePage() {
                 height={40}
                 className="rounded-full"
               />
-              <h2 className="font-heading text-xl font-semibold">Company Profile</h2>
+              <h2 className="font-heading text-xl font-semibold">About Us</h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed text-justify">
               Urban Catering brings the essence of exceptional Nicosia catering & dining directly to you, transforming any location into an extraordinary gastronomic venue.

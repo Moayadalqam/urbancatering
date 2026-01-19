@@ -15,10 +15,10 @@ const corporateImages = [
 ];
 
 const services = [
-  { icon: Heart, title: 'Weddings', description: 'Dream weddings with premium service.', href: '/services/weddings' },
-  { icon: Building2, title: 'Corporate', description: 'Professional business catering.', href: '/services/corporate' },
-  { icon: Martini, title: 'Cocktail Bar', description: 'High-end mobile mixology.', href: '/services/cocktail-bar' },
-  { icon: ChefHat, title: 'Private Chef', description: 'Exclusive dining at home.', href: '/services/private-chef' },
+  { icon: Heart, title: 'Weddings', description: 'Premium wedding catering.', href: '/services/weddings' },
+  { icon: Building2, title: 'Corporate', description: 'Business event catering.', href: '/services/corporate' },
+  { icon: Martini, title: 'Cocktail Bar', description: 'High-end mixology service.', href: '/services/cocktail-bar' },
+  { icon: ChefHat, title: 'Private Chef', description: 'Exclusive home dining.', href: '/services/private-chef' },
 ];
 
 const menuCards = [
@@ -359,7 +359,7 @@ export default function HomePage() {
                 >
                   <Link
                     href={service.href}
-                    className="group block p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-gold hover:shadow-xl transition-all duration-500"
+                    className="group block p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-gold hover:shadow-xl transition-all duration-500 h-full"
                   >
                     <div className="w-14 h-14 bg-dark-primary/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-gold/10 transition-colors">
                       <Icon className="w-7 h-7 text-dark-primary group-hover:text-brand-gold transition-colors" />
@@ -455,12 +455,12 @@ export default function HomePage() {
                   href={card.href}
                   className="group block bg-dark-secondary rounded-2xl overflow-hidden border border-white/5 hover:border-brand-gold transition-all duration-500"
                 >
-                  <div className="aspect-[4/3] relative overflow-hidden">
+                  <div className="aspect-[4/3] relative overflow-hidden bg-dark-secondary">
                     <Image
                       src={card.image}
                       alt={card.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="object-contain group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/80 to-transparent" />

@@ -73,7 +73,7 @@ export default function ContactPage() {
     );
 
     // Open email client
-    window.location.href = `mailto:info@urbancateringcy.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@urbancatering.com.cy?subject=${subject}&body=${body}`;
 
     // Show success state
     setTimeout(() => {
@@ -156,10 +156,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                   <a
-                    href="mailto:info@urbancateringcy.com"
+                    href="mailto:info@urbancatering.com.cy"
                     className="text-brand-blue hover:text-brand-teal transition-colors"
                   >
-                    info@urbancateringcy.com
+                    info@urbancatering.com.cy
                   </a>
                 </div>
               </motion.div>

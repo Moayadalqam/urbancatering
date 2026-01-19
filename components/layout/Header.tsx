@@ -14,6 +14,7 @@ const navigation = [
     name: 'Services',
     href: '/services',
     children: [
+      { name: 'Equipment Rentals', href: '/services/equipment-rentals' },
       { name: 'Weddings', href: '/services/weddings' },
       { name: 'Corporate', href: '/services/corporate' },
       { name: 'Private Parties', href: '/services/private-parties' },
@@ -25,7 +26,6 @@ const navigation = [
       { name: 'Candy Bar', href: '/services/candy-bar' },
       { name: 'Christenings', href: '/services/christenings' },
       { name: 'Private Chef', href: '/services/private-chef' },
-      { name: 'Equipment Rentals', href: '/services/equipment-rentals' },
     ],
   },
   {

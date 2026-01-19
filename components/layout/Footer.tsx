@@ -3,16 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
 
 const footerLinks = {
   services: [
+    { name: 'Equipment Rentals', href: '/services/equipment-rentals' },
     { name: 'Weddings', href: '/services/weddings' },
     { name: 'Corporate Events', href: '/services/corporate' },
     { name: 'Private Parties', href: '/services/private-parties' },
     { name: 'Kids Parties', href: '/services/kids-parties' },
     { name: 'BBQ Catering', href: '/services/bbq' },
-    { name: 'Equipment Rentals', href: '/services/equipment-rentals' },
   ],
   menus: [
     { name: 'Buffet Menu', href: '/menu/buffet' },
@@ -64,8 +64,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-brand-gold" />
-                <a href="mailto:info@urbancateringcy.com" className="hover:text-white transition-colors">
-                  info@urbancateringcy.com
+                <a href="mailto:info@urbancatering.com.cy" className="hover:text-white transition-colors">
+                  info@urbancatering.com.cy
                 </a>
               </div>
             </div>
@@ -164,9 +164,14 @@ export default function Footer() {
                 Privacy Policy
               </Link>
               <span className="text-gray-700">|</span>
-              <span className="text-gray-500 text-sm">
-                Premium Event Catering in Nicosia
-              </span>
+              <a
+                href="https://qualiasolutions.com.cy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-teal hover:text-white text-sm transition-colors"
+              >
+                Developed by Qualia Solutions
+              </a>
             </div>
           </div>
         </div>
