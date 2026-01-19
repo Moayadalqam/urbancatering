@@ -167,7 +167,7 @@ export default function Footer() {
               <span className="text-gray-500 text-sm">
                 Developed and designed by{' '}
                 <a
-                  href="https://qualiasolutions.com.cy"
+                  href="https://www.qualiasolutions.net"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-teal hover:text-white transition-colors font-medium relative inline-block glow-teal"
