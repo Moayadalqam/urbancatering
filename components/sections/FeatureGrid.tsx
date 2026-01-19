@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 interface FeatureItem {
   title: string;
   description: string;
@@ -18,12 +22,19 @@ export default function FeatureGrid({ items, columns = 2 }: FeatureGridProps) {
   return (
     <div className={`grid grid-cols-1 ${gridCols[columns]} gap-8 md:gap-10`}>
       {items.map((item, index) => (
-        <div key={index} className="space-y-3">
-          <h3 className="font-heading text-lg font-semibold text-gray-900 pb-3 border-b border-gray-200">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="space-y-3 group"
+        >
+          <h3 className="font-heading text-lg font-semibold text-gray-900 pb-3 border-b border-gray-200 group-hover:border-brand-blue transition-colors duration-300">
             {item.title}
           </h3>
           <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

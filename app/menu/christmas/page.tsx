@@ -1,32 +1,46 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import { christmasMenuData } from '@/lib/data/menus';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Christmas Menu',
-  description: 'Celebrate the festive season with our specially curated Christmas menu selections.',
-};
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
+import { christmasMenuData } from '@/lib/data/menus';
 
 export default function ChristmasMenuPage() {
   return (
     <div className="py-8 md:py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-10"
+        >
           <h1 className="font-heading text-3xl md:text-4xl font-bold text-brand-gold mb-4">
             {christmasMenuData.name}
           </h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-0.5 bg-gradient-to-r from-brand-gold to-brand-blue mx-auto mb-4"
+          />
           <p className="text-gray-600 max-w-2xl mx-auto">
             {christmasMenuData.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {christmasMenuData.cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative bg-white border-2 border-brand-gold rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -8 }}
+              className="group relative bg-white border-2 border-brand-gold rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative h-80 md:h-96 overflow-hidden">
                 <Image
@@ -40,39 +54,40 @@ export default function ChristmasMenuPage() {
                 <div className="absolute inset-3 border border-brand-gold/40 pointer-events-none" />
               </div>
               {/* Label */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white/95 py-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
+                className="absolute bottom-0 left-0 right-0 bg-white/95 py-3 text-center"
+              >
                 <h3 className="font-heading text-lg font-semibold text-brand-gold">
                   {card.title}
                 </h3>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
         {/* Download Button */}
-        <div className="text-center">
-          <a
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <motion.a
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             href={christmasMenuData.downloadLink}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-bold uppercase tracking-wide hover:bg-white hover:text-gray-900 border border-gray-900 hover:border-brand-gold transition-all duration-300"
             download
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
+            <Download className="w-5 h-5" />
             Download All Menus
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </div>
   );

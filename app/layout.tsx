@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import PageLoader from '@/components/ui/PageLoader';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -41,8 +42,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${raleway.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <PageLoader />
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-20">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />
