@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/company-profile' },
+  { name: 'Company Profile', href: '/company-profile' },
   { name: 'Our Chefs', href: '/our-chefs' },
   {
     name: 'Services',

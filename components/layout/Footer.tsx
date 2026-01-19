@@ -21,7 +21,7 @@ const footerLinks = {
     { name: 'Christmas Menu', href: '/menu/christmas' },
   ],
   company: [
-    { name: 'About Us', href: '/company-profile' },
+    { name: 'Company Profile', href: '/company-profile' },
     { name: 'Our Chefs', href: '/our-chefs' },
     { name: 'Contact', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
