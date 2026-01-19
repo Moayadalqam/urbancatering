@@ -1,18 +1,16 @@
 'use client';
 
-import { use } from 'react';
 import { notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
 import MenuSlideshow from '@/components/slideshow/MenuSlideshow';
 import { menusData } from '@/lib/data/menus';
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function MenuPage({ params }: Props) {
-  const { slug } = use(params);
-  const menu = menusData.find((m) => m.slug === slug);
+  const menu = menusData.find((m) => m.slug === params.slug);
 
   if (!menu) {
     notFound();
