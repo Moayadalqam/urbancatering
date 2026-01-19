@@ -140,6 +140,21 @@ a {
   }
 }
 
+/* Glowing teal effect */
+.glow-teal {
+  text-shadow:
+    0 0 10px rgba(73, 113, 115, 0.6),
+    0 0 20px rgba(73, 113, 115, 0.4),
+    0 0 30px rgba(73, 113, 115, 0.2);
+}
+
+.glow-teal:hover {
+  text-shadow:
+    0 0 15px rgba(73, 113, 115, 0.8),
+    0 0 30px rgba(73, 113, 115, 0.6),
+    0 0 45px rgba(73, 113, 115, 0.4);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

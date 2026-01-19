@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function PageLoader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,21 +28,26 @@ export default function PageLoader() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Logo mark */}
-              <div className="w-16 h-16 mx-auto mb-4 relative">
+              {/* Logo */}
+              <div className="w-20 h-20 mx-auto mb-4 relative">
                 <motion.div
-                  className="absolute inset-0 border-2 border-brand-gold rounded-full"
+                  className="absolute inset-[-4px] border-2 border-brand-gold rounded-full"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
                 />
                 <motion.div
-                  className="absolute inset-2 border border-white/20 rounded-full"
+                  className="absolute inset-[-8px] border border-white/20 rounded-full"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-heading text-xl font-bold text-white">UC</span>
-                </div>
+                <Image
+                  src="https://i.ibb.co/3ytjFrv/Whats-App-Image-2024-10-07-at-18-03-48.jpg"
+                  alt="Urban Catering Logo"
+                  width={80}
+                  height={80}
+                  className="rounded-full"
+                  priority
+                />
               </div>
 
               {/* Loading bar */}

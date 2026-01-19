@@ -164,14 +164,17 @@ export default function Footer() {
                 Privacy Policy
               </Link>
               <span className="text-gray-700">|</span>
-              <a
-                href="https://qualiasolutions.com.cy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-teal hover:text-white text-sm transition-colors"
-              >
-                Developed by Qualia Solutions
-              </a>
+              <span className="text-gray-500 text-sm">
+                Developed and designed by{' '}
+                <a
+                  href="https://qualiasolutions.com.cy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-teal hover:text-white transition-colors font-medium relative inline-block glow-teal"
+                >
+                  Qualia Solutions
+                </a>
+              </span>
             </div>
           </div>
         </div>
